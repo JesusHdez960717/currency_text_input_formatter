@@ -225,11 +225,6 @@ class CurrencyTextInputFormatter extends TextInputFormatter {
     TextEditingValue oldValue,
     TextEditingValue newValue,
   ) {
-    // Prevent any space characters from being inserted
-    if (newValue.text.contains(' ')) {
-      return oldValue;
-    }
-
     final bool isLeft = inputDirection == InputDirection.left;
     if (isLeft) {
       // Allow an empty field
@@ -264,7 +259,7 @@ class CurrencyTextInputFormatter extends TextInputFormatter {
     //         newValue.text.startsWith(oldValue.text);
     final bool isRemovedCharacter =
         oldValue.text.length - 1 == newValue.text.length &&
-            oldValue.text.startsWith(newValue.text);
+        oldValue.text.startsWith(newValue.text);
 
     // Apparently, Flutter has a bug where the framework calls
     // formatEditUpdate twice, or even four times, after a backspace press (see
