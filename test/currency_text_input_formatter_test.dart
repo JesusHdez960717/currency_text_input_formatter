@@ -142,9 +142,9 @@ void main() {
 
   test('Does not allow space character in input', () {
     final CurrencyTextInputFormatter formatter =
-        CurrencyTextInputFormatter.currency();
+        CurrencyTextInputFormatter.currency(symbol: '');
 
-    const TextEditingValue oldValue = TextEditingValue(text: '0');
+    const TextEditingValue oldValue = TextEditingValue(text: '0.00');
     const TextEditingValue newValue = TextEditingValue(text: '0 ');
     final TextEditingValue result =
         formatter.formatEditUpdate(oldValue, newValue);
