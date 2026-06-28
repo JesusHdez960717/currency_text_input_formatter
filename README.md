@@ -75,7 +75,7 @@ class MyFormField extends StatefulWidget {
   const MyFormField({ super.key });
 
   @override
-  State<YellowBird> createState() => _MyFormFieldState();
+  State<MyFormField> createState() => _MyFormFieldState();
 }
 
 class _MyFormFieldState extends State<MyFormField> {
@@ -155,7 +155,7 @@ class MyFormField extends StatefulWidget {
   const MyFormField({ super.key });
 
   @override
-  State<YellowBird> createState() => _MyFormFieldState();
+  State<MyFormField> createState() => _MyFormFieldState();
 }
 
 class _MyFormFieldState extends State<MyFormField> {
@@ -164,10 +164,10 @@ class _MyFormFieldState extends State<MyFormField> {
   @override
   Widget build(BuildContext context) {
     // Built-in Methods
-    print(formatter.getFormattedValue()); // $ 2,000
-    print(formatter.getUnformattedValue()); // 2000.00
-    print(formatter.formatString('2000')); // $ 2,000
-    print(formatter.formatDouble('20.00')); // $ 20
+    print(_formatter.getFormattedValue()); // $ 2,000
+    print(_formatter.getUnformattedValue()); // 2000.00
+    print(_formatter.formatString('2000')); // $ 2,000
+    print(_formatter.formatDouble(20.00)); // $ 20
 
     return TextFormField(
       inputFormatters: <TextInputFormatter>[_formatter],
